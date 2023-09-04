@@ -8,10 +8,10 @@ import {
   Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const DEVELOPMENT_URL = 'http://10.0.0.91:5000'
 
@@ -90,7 +90,7 @@ export default function Home({navigation, route}) {
             .catch(
             )
         }
-        
+
     },[])
 
     if(picture){
@@ -105,7 +105,7 @@ export default function Home({navigation, route}) {
                     </View>
                 </SafeAreaView>
                 )
-        }   
+        }
         console.log('Picture uri', picture);
         return(
         <SafeAreaView style={styles.container}>
@@ -116,7 +116,7 @@ export default function Home({navigation, route}) {
         </SafeAreaView>
         )
     }
-    
+
     return(
        <SafeAreaView style={styles.container}>
             <Camera style={styles.container} ref={cameraRef} type={type} onCameraReady={onCameraReady}></Camera>
@@ -134,48 +134,3 @@ export default function Home({navigation, route}) {
        </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 5,
-        flexDirection: 'column',
-      },
-    optionBar: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    cameraButtonContainer : {
-        flex: 4,
-        backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    smallerButtonContainer : {
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    roundButton1: {
-        width: 100,
-        height: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        borderRadius: 100,
-        backgroundColor: 'orange',
-    },
-    centeredContainer: {
-        flex: 5,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    pictureContainer : {
-        width: '100%',
-        height: undefined,
-        aspectRatio: .75,
-    }
-})
